@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>کافی‌نت امین</title>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#070b18;--card:rgba(255,255,255,.05);--line:rgba(255,255,255,.12);--text:#e9eeff;--muted:#9aa7cc;--c1:#00e5ff;--c2:#a855f7;--c3:#ff3d9a}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'Vazirmatn',Tahoma,sans-serif;line-height:1.9;overflow-x:hidden}
+body::before,body::after{content:"";position:fixed;width:520px;height:520px;border-radius:50%;filter:blur(120px);opacity:.28;z-index:-1;animation:float 14s ease-in-out infinite alternate}
+body::before{background:var(--c2);top:-120px;right:-120px}
+body::after{background:var(--c1);bottom:-140px;left:-140px;animation-delay:-7s}
+@keyframes float{to{transform:translate(60px,70px) scale(1.2)}}
+.wrap{max-width:980px;margin:auto;padding:0 18px}
+nav{position:sticky;top:0;z-index:5;backdrop-filter:blur(14px);background:rgba(7,11,24,.6);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;padding:12px 18px}
+nav b{font-weight:900;font-size:1.1rem}
+nav a{color:var(--muted);text-decoration:none;margin-right:16px;font-size:.95rem;transition:.2s}
+nav a:hover{color:var(--c1)}
+.hero{text-align:center;padding:90px 0 70px}
+.badge{display:inline-block;border:1px solid var(--line);background:var(--card);padding:4px 16px;border-radius:999px;color:var(--c1);font-size:.85rem;margin-bottom:18px}
+.badge i{display:inline-block;width:8px;height:8px;border-radius:50%;background:#22ff88;margin-left:6px;animation:pulse 1.4s infinite}
+@keyframes pulse{50%{opacity:.25;transform:scale(1.6)}}
+h1{font-size:clamp(2.6rem,9vw,5rem);font-weight:900;margin:0;line-height:1.3;background:linear-gradient(90deg,var(--c1),var(--c2),var(--c3),var(--c1));background-size:300% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:flow 6s linear infinite}
+@keyframes flow{to{background-position:-300% 0}}
+.type{font-size:1.2rem;color:var(--muted);min-height:2em;margin:10px 0 28px}
+.type::after{content:"|";color:var(--c1);animation:blink 1s infinite}
+@keyframes blink{50%{opacity:0}}
+.btn{display:inline-block;padding:12px 30px;border-radius:14px;text-decoration:none;font-weight:700;margin:5px;transition:.25s}
+.b1{background:linear-gradient(90deg,var(--c1),var(--c2));color:#06101f;box-shadow:0 0 28px rgba(0,229,255,.35)}
+.b2{border:1px solid var(--line);color:var(--text);background:var(--card)}
+.btn:hover{transform:translateY(-4px) scale(1.04)}
+section{padding:50px 0}
+h2{font-size:1.9rem;font-weight:900;margin:0 0 26px}
+h2::after{content:"";display:block;width:60px;height:4px;border-radius:4px;margin-top:6px;background:linear-gradient(90deg,var(--c1),var(--c3))}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:22px;transition:.3s;backdrop-filter:blur(8px)}
+.card:hover{transform:translateY(-8px) rotate(-.6deg);border-color:var(--c1);box-shadow:0 10px 40px rgba(0,229,255,.18)}
+.card .ic{font-size:2.2rem;display:block;margin-bottom:6px}
+.card b{display:block;font-size:1.1rem}
+.card span.t{color:var(--muted);font-size:.92rem}
+.about{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:26px}
+.tl{border-right:3px solid var(--c2);padding-right:18px;margin-top:14px}
+.tl div{position:relative;margin-bottom:16px}
+.tl div::before{content:"";position:absolute;right:-26px;top:10px;width:14px;height:14px;border-radius:50%;background:var(--c1);box-shadow:0 0 14px var(--c1)}
+.tl b{color:var(--c1)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:20px;text-align:center}
+.stats .card{padding:14px}
+.stats strong{font-size:1.6rem;color:var(--c3)}
+.stats small{display:block;color:var(--muted)}
+.contact a{color:var(--c1);text-decoration:none;font-weight:700;direction:ltr;unicode-bidi:embed;word-break:break-all}
+footer{text-align:center;color:var(--muted);padding:30px 0;border-top:1px solid var(--line);font-size:.9rem}
+.rv{opacity:0;transform:translateY(30px);transition:.8s}
+.rv.on{opacity:1;transform:none}
+.ob{display:inline-block;margin-top:12px;padding:7px 18px;border-radius:10px;font-size:.88rem;font-weight:700;text-decoration:none;color:#06101f;background:linear-gradient(90deg,var(--c1),var(--c2));transition:.2s}
+.ob:hover{transform:scale(1.07);box-shadow:0 0 18px rgba(0,229,255,.5)}
+.toast{position:fixed;right:50%;transform:translateX(50%) translateY(80px);bottom:24px;z-index:20;background:#111a33;color:#fff;border:1px solid var(--c1);padding:12px 22px;border-radius:14px;transition:.4s;opacity:0;box-shadow:0 0 24px rgba(0,229,255,.4);max-width:90vw;text-align:center}.toast.show{transform:translateX(50%);opacity:1}
+.fab{position:fixed;left:16px;bottom:16px;z-index:9;display:flex;flex-direction:column;gap:10px}
+.fab a{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.4rem;text-decoration:none;background:linear-gradient(135deg,var(--c1),var(--c2));box-shadow:0 0 24px rgba(168,85,247,.6);transition:.2s}
+.fab a:hover{transform:scale(1.15)}
+@media(max-width:560px){nav a{margin-right:9px;font-size:.85rem}}
+</style>
+</head>
+<body>
+<nav><div class="wrap"><b>💻 کافی‌نت امین</b><div><a href="#services">خدمات</a><a href="#about">درباره ما</a><a href="#contact">تماس</a></div></div></nav>
+
+<div class="wrap hero">
+  <div class="badge"><i></i>آماده خدمت‌رسانی</div>
+  <h1>کافی‌نت امین</h1>
+  <div class="type" id="type"></div>
+  <a class="btn b1" href="tel:09358263038">📞 تماس سریع</a>
+  <a class="btn b2" href="sms:09358263038">💬 ارسال پیامک</a>
+  <a class="btn b2" href="mailto:900mohammadamin1395@gmail.com">✉️ ایمیل</a>
+  <a class="btn b2" href="#services">🛠️ دیدن خدمات</a>
+</div>
+
+<section id="services"><div class="wrap">
+  <h2 class="rv">خدمات ما</h2>
+  <div class="grid" id="sv"></div>
+</div></section>
+
+<section id="about"><div class="wrap">
+  <h2 class="rv">درباره ما</h2>
+  <div class="about rv">
+    <p>سلام! من امین هستم؛ تنها صاحب و مسئول این کافی‌نت. تیم ندارم، اما هر کاری را خودم با دقت انجام می‌دهم. 🙂</p>
+    <div class="tl">
+      <div><b>سال ۱۴۰۴</b><br>عاشق کامپیوتر شدم ❤️</div>
+      <div><b>سال ۱۴۰۵</b><br>ترم ۱ را گذراندم 🎓</div>
+      <div><b>الان</b><br>این سایت من است 🚀</div>
+    </div>
+    <div class="stats">
+      <div class="card"><strong>۱</strong><small>نفر، همه‌کاره</small></div>
+      <div class="card"><strong>۱۱+</strong><small>خدمت</small></div>
+      <div class="card"><strong>💯</strong><small>تعهد به دقت</small></div>
+    </div>
+  </div>
+</div></section>
+
+<section id="contact"><div class="wrap contact">
+  <h2 class="rv">تماس با ما</h2>
+  <div class="grid">
+    <div class="card rv"><span class="ic">📱</span><b>شماره تماس</b><a href="tel:09358263038">09358263038</a></div>
+    <div class="card rv"><span class="ic">✉️</span><b>ایمیل</b><a href="mailto:900mohammadamin1395@gmail.com">900mohammadamin1395@gmail.com</a></div>
+  </div>
+  <div style="text-align:center;margin-top:22px">
+    <a class="btn b1" href="tel:09358263038">📞 تماس</a>
+    <a class="btn b2" href="sms:09358263038">💬 پیامک</a>
+    <a class="btn b2" href="mailto:900mohammadamin1395@gmail.com">✉️ ایمیل</a>
+    <a class="btn b2" href="#" onclick="window.scrollTo({top:0});return false">⬆️ بالای صفحه</a>
+  </div>
+</div></section>
+
+<div class="fab"><a href="tel:09358263038" title="تماس">📞</a><a href="sms:09358263038" title="پیامک">💬</a></div>
+<div class="toast" id="toast"></div>
+<footer>ساخته‌شده با ❤️ توسط امین · کافی‌نت امین</footer>
+
+<script>
+var sv=[["🌐","اینترنت پرسرعت","برای کار، درس و سرگرمی"],["⌨️","تایپ","فارسی و انگلیسی، سریع و دقیق"],["📘","ورد (Word)","تایپ، فرمت‌بندی، پایان‌نامه و گزارش"],["📙","پاورپوینت (PowerPoint)","ساخت اسلاید برای ارائه و کلاس"],["🖨️","پرینت و کپی","چاپ مدارک و اسناد"],["📄","اسکن","اسکن و ارسال فایل"],["📑","تبدیل به PDF","تبدیل فرمت و ادغام فایل‌ها"],["🧾","رزومه","نوشتن و چاپ رزومه"],["📝","ثبت‌نام اینترنتی","کمک در پر کردن فرم‌ها"],["📧","ایمیل و فایل","ارسال ایمیل و دانلود فایل"],["💽","نصب نرم‌افزار","کمک در نصب برنامه‌های ساده"]];
+document.getElementById('sv').innerHTML=sv.map(function(x){return '<div class="card rv"><span class="ic">'+x[0]+'</span><b>'+x[1]+'</b><span class="t">'+x[2]+'</span><br><a class="ob" href="sms:09358263038?body='+encodeURIComponent('سلام، درباره '+x[1]+' سوال داشتم')+'">سفارش بده</a> <a class="ob" href="tel:09358263038" style="background:var(--card);color:var(--text);border:1px solid var(--line)">تماس</a></div>'}).join('');
+var lines=["اینترنت، تایپ، پرینت و اسکن","سریع، مطمئن، بدون معطلی","خدمات کامپیوتری یک‌نفره، با دقت"];
+var el=document.getElementById('type'),li=0,ci=0,del=false;
+(function tick(){
+  var s=lines[li];
+  el.textContent=s.slice(0,ci);
+  if(!del&&ci<s.length){ci++;setTimeout(tick,70)}
+  else if(!del){del=true;setTimeout(tick,1400)}
+  else if(ci>0){ci--;setTimeout(tick,30)}
+  else{del=false;li=(li+1)%lines.length;setTimeout(tick,300)}
+})();
+var io=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){x.target.classList.add('on')}})},{threshold:.15});
+document.querySelectorAll('.rv').forEach(function(n,i){n.style.transitionDelay=(i%6)*80+'ms';io.observe(n)});
+
+var isMobile=/Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent);
+function toast(m){var t=document.getElementById('toast');t.textContent=m;t.classList.add('show');clearTimeout(window._t);window._t=setTimeout(function(){t.classList.remove('show')},3200)}
+function copyText(x){if(navigator.clipboard&&navigator.clipboard.writeText){return navigator.clipboard.writeText(x)}var a=document.createElement('textarea');a.value=x;document.body.appendChild(a);a.select();try{document.execCommand('copy')}catch(e){}a.remove();return Promise.resolve()}
+document.addEventListener('click',function(e){
+  var a=e.target.closest('a');if(!a||isMobile)return;
+  var h=a.getAttribute('href')||'';
+  if(h.indexOf('tel:')===0||h.indexOf('sms:')===0){
+    e.preventDefault();
+    copyText('09358263038').then(function(){toast('📋 شماره کپی شد: 09358263038 — با گوشی خود تماس بگیرید')});
+  }else if(h.indexOf('mailto:')===0){
+    e.preventDefault();
+    window.open('https://mail.google.com/mail/?view=cm&to=900mohammadamin1395@gmail.com','_blank');
+    copyText('900mohammadamin1395@gmail.com');
+    toast('✉️ ایمیل کپی شد و جیمیل باز می‌شود');
+  }
+});
+</script>
+</body>
+</html>
